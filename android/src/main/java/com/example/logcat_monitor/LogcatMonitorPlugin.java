@@ -159,7 +159,9 @@ public class LogcatMonitorPlugin implements FlutterPlugin, MethodCallHandler, Ev
 				new Runnable() {
 					@Override
 					public void run() {
-						eventSink.success(message);
+						if (eventSink != null) {
+							eventSink.success(message);
+						}
 					}
 				});
 	}
